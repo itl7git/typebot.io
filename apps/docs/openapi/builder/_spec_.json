@@ -3982,6 +3982,51 @@
                                           "options"
                                         ],
                                         "additionalProperties": false
+                                      },
+                                      {
+                                        "type": "object",
+                                        "properties": {
+                                          "id": {
+                                            "type": "string"
+                                          },
+                                          "groupId": {
+                                            "type": "string"
+                                          },
+                                          "outgoingEdgeId": {
+                                            "type": "string"
+                                          },
+                                          "type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "RD Station"
+                                            ]
+                                          },
+                                          "blockId": {
+                                            "type": "string"
+                                          },
+                                          "options": {
+                                            "type": "object",
+                                            "properties": {
+                                              "tokenId": {
+                                                "type": "string"
+                                              },
+                                              "name": {
+                                                "type": "string"
+                                              }
+                                            },
+                                            "required": [
+                                              "responseMapping"
+                                            ],
+                                            "additionalProperties": false
+                                          }
+                                        },
+                                        "required": [
+                                          "id",
+                                          "groupId",
+                                          "type",
+                                          "options"
+                                        ],
+                                        "additionalProperties": false
                                       }
                                     ]
                                   }
@@ -8379,6 +8424,51 @@
                                       "options"
                                     ],
                                     "additionalProperties": false
+                                  },
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "id": {
+                                        "type": "string"
+                                      },
+                                      "groupId": {
+                                        "type": "string"
+                                      },
+                                      "outgoingEdgeId": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "RD Station"
+                                        ]
+                                      },
+                                      "blockId": {
+                                        "type": "string"
+                                      },
+                                      "options": {
+                                        "type": "object",
+                                        "properties": {
+                                          "tokenId": {
+                                            "type": "string"
+                                          },
+                                          "name": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "responseMapping"
+                                        ],
+                                        "additionalProperties": false
+                                      }
+                                    },
+                                    "required": [
+                                      "id",
+                                      "groupId",
+                                      "type",
+                                      "options"
+                                    ],
+                                    "additionalProperties": false
                                   }
                                 ]
                               }
@@ -12402,6 +12492,51 @@
                                                 ],
                                                 "additionalProperties": false
                                               }
+                                            }
+                                          },
+                                          "required": [
+                                            "responseMapping"
+                                          ],
+                                          "additionalProperties": false
+                                        }
+                                      },
+                                      "required": [
+                                        "id",
+                                        "groupId",
+                                        "type",
+                                        "options"
+                                      ],
+                                      "additionalProperties": false
+                                    },
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "id": {
+                                          "type": "string"
+                                        },
+                                        "groupId": {
+                                          "type": "string"
+                                        },
+                                        "outgoingEdgeId": {
+                                          "type": "string"
+                                        },
+                                        "type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "RD Station"
+                                          ]
+                                        },
+                                        "blockId": {
+                                          "type": "string"
+                                        },
+                                        "options": {
+                                          "type": "object",
+                                          "properties": {
+                                            "tokenId": {
+                                              "type": "string"
+                                            },
+                                            "name": {
+                                              "type": "string"
                                             }
                                           },
                                           "required": [
@@ -16595,6 +16730,51 @@
                                       "options"
                                     ],
                                     "additionalProperties": false
+                                  },
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "id": {
+                                        "type": "string"
+                                      },
+                                      "groupId": {
+                                        "type": "string"
+                                      },
+                                      "outgoingEdgeId": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "RD Station"
+                                        ]
+                                      },
+                                      "blockId": {
+                                        "type": "string"
+                                      },
+                                      "options": {
+                                        "type": "object",
+                                        "properties": {
+                                          "tokenId": {
+                                            "type": "string"
+                                          },
+                                          "name": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "responseMapping"
+                                        ],
+                                        "additionalProperties": false
+                                      }
+                                    },
+                                    "required": [
+                                      "id",
+                                      "groupId",
+                                      "type",
+                                      "options"
+                                    ],
+                                    "additionalProperties": false
                                   }
                                 ]
                               }
@@ -20638,6 +20818,51 @@
                                                 ],
                                                 "additionalProperties": false
                                               }
+                                            }
+                                          },
+                                          "required": [
+                                            "responseMapping"
+                                          ],
+                                          "additionalProperties": false
+                                        }
+                                      },
+                                      "required": [
+                                        "id",
+                                        "groupId",
+                                        "type",
+                                        "options"
+                                      ],
+                                      "additionalProperties": false
+                                    },
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "id": {
+                                          "type": "string"
+                                        },
+                                        "groupId": {
+                                          "type": "string"
+                                        },
+                                        "outgoingEdgeId": {
+                                          "type": "string"
+                                        },
+                                        "type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "RD Station"
+                                          ]
+                                        },
+                                        "blockId": {
+                                          "type": "string"
+                                        },
+                                        "options": {
+                                          "type": "object",
+                                          "properties": {
+                                            "tokenId": {
+                                              "type": "string"
+                                            },
+                                            "name": {
+                                              "type": "string"
                                             }
                                           },
                                           "required": [
@@ -24751,6 +24976,51 @@
                                                 ],
                                                 "additionalProperties": false
                                               }
+                                            }
+                                          },
+                                          "required": [
+                                            "responseMapping"
+                                          ],
+                                          "additionalProperties": false
+                                        }
+                                      },
+                                      "required": [
+                                        "id",
+                                        "groupId",
+                                        "type",
+                                        "options"
+                                      ],
+                                      "additionalProperties": false
+                                    },
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "id": {
+                                          "type": "string"
+                                        },
+                                        "groupId": {
+                                          "type": "string"
+                                        },
+                                        "outgoingEdgeId": {
+                                          "type": "string"
+                                        },
+                                        "type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "RD Station"
+                                          ]
+                                        },
+                                        "blockId": {
+                                          "type": "string"
+                                        },
+                                        "options": {
+                                          "type": "object",
+                                          "properties": {
+                                            "tokenId": {
+                                              "type": "string"
+                                            },
+                                            "name": {
+                                              "type": "string"
                                             }
                                           },
                                           "required": [
@@ -28927,6 +29197,51 @@
                                                 ],
                                                 "additionalProperties": false
                                               }
+                                            }
+                                          },
+                                          "required": [
+                                            "responseMapping"
+                                          ],
+                                          "additionalProperties": false
+                                        }
+                                      },
+                                      "required": [
+                                        "id",
+                                        "groupId",
+                                        "type",
+                                        "options"
+                                      ],
+                                      "additionalProperties": false
+                                    },
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "id": {
+                                          "type": "string"
+                                        },
+                                        "groupId": {
+                                          "type": "string"
+                                        },
+                                        "outgoingEdgeId": {
+                                          "type": "string"
+                                        },
+                                        "type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "RD Station"
+                                          ]
+                                        },
+                                        "blockId": {
+                                          "type": "string"
+                                        },
+                                        "options": {
+                                          "type": "object",
+                                          "properties": {
+                                            "tokenId": {
+                                              "type": "string"
+                                            },
+                                            "name": {
+                                              "type": "string"
                                             }
                                           },
                                           "required": [

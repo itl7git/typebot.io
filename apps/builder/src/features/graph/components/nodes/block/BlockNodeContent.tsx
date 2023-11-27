@@ -44,6 +44,7 @@ import { PictureChoiceNode } from '@/features/blocks/inputs/pictureChoice/compon
 import { PixelNodeBody } from '@/features/blocks/integrations/pixel/components/PixelNodeBody'
 import { useTranslate } from '@tolgee/react'
 import { ZemanticAiNodeBody } from '@/features/blocks/integrations/zemanticAi/ZemanticAiNodeBody'
+import { RdInputContent } from '@/features/blocks/integrations/rdstation/RdInputContent'
 
 type Props = {
   block: Block | StartBlock
@@ -199,6 +200,9 @@ export const BlockNodeContent = ({ block, indices }: Props): JSX.Element => {
     }
     case IntegrationBlockType.ZEMANTIC_AI: {
       return <ZemanticAiNodeBody options={block.options} />
+    }
+    case IntegrationBlockType.RD: {
+      return <RdInputContent />
     }
     case 'start': {
       return <Text>{t('editor.blocks.start.text')}</Text>

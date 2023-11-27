@@ -48,6 +48,7 @@ import { PictureChoiceSettings } from '@/features/blocks/inputs/pictureChoice/co
 import { SettingsHoverBar } from './SettingsHoverBar'
 import { PixelSettings } from '@/features/blocks/integrations/pixel/components/PixelSettings'
 import { ZemanticAiSettings } from '@/features/blocks/integrations/zemanticAi/ZemanticAiSettings'
+import { RdSettings } from '@/features/blocks/integrations/rdstation/RdSettings'
 
 type Props = {
   block: BlockWithOptions
@@ -318,6 +319,11 @@ export const BlockSettings = ({
     case IntegrationBlockType.ZEMANTIC_AI: {
       return (
         <ZemanticAiSettings block={block} onOptionsChange={updateOptions} />
+      )
+    }
+    case IntegrationBlockType.RD: {
+      return (
+        <RdSettings options={block} onOptionsChange={updateOptions}/>
       )
     }
   }

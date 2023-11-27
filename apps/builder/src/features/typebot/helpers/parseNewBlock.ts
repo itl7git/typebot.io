@@ -45,6 +45,8 @@ import {
   BlockWithItems,
   defaultTypebotLinkOptions,
   zemanticAiDefaultOptions,
+  defaultRdStationOptions,
+
 } from '@typebot.io/schemas'
 import { defaultPictureChoiceOptions } from '@typebot.io/schemas/features/blocks/inputs/pictureChoice'
 
@@ -146,6 +148,8 @@ const parseDefaultBlockOptions = (type: BlockWithOptionsType): BlockOptions => {
       return {}
     case IntegrationBlockType.ZEMANTIC_AI:
       return zemanticAiDefaultOptions
+    case IntegrationBlockType.RD:
+      return defaultRdStationOptions
   }
 }
 

@@ -100,5 +100,7 @@ export const BlockLabel = ({ type }: Props): JSX.Element => {
       return (
         <Text fontSize="sm">{t('editor.sidebarBlock.zemanticAi.label')}</Text>
       )
+    case IntegrationBlockType.RD:
+      return <Text fontSize="sm">{t('editor.sidebarBlock.rd.label')}</Text>
   }
 }

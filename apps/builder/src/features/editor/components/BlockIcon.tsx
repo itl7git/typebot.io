@@ -121,7 +121,10 @@ export const BlockIcon = ({ type, ...props }: BlockIconProps): JSX.Element => {
       return <PixelLogo {...props} />
     case IntegrationBlockType.ZEMANTIC_AI:
       return <ZemanticAiLogo {...props} />
+    case IntegrationBlockType.RD:
+        return <WebhookIcon {...props} />   
     case 'start':
       return <FlagIcon {...props} />
+   
   }
 }

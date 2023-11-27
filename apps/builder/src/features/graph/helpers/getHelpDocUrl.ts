@@ -65,5 +65,7 @@ export const getHelpDocUrl = (blockType: BlockWithOptions['type']): string => {
       return 'https://docs.typebot.io/editor/blocks/integrations/pixel'
     case IntegrationBlockType.ZEMANTIC_AI:
       return 'https://docs.typebot.io/editor/blocks/integrations/zemantic-ai'
+    case IntegrationBlockType.RD:
+      return 'https://developers.rdstation.com/reference/rdcrm-introducao-e-requisitos'
   }
 }
