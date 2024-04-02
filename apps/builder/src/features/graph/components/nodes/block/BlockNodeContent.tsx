@@ -39,6 +39,7 @@ import { LogicBlockType } from '@typebot.io/schemas/features/blocks/logic/consta
 import { IntegrationBlockType } from '@typebot.io/schemas/features/blocks/integrations/constants'
 import { ForgedBlockNodeContent } from '@/features/forge/components/ForgedBlockNodeContent'
 import { OpenAINodeBody } from '@/features/blocks/integrations/openai/components/OpenAINodeBody'
+import { EnviaQueueNodeBody } from '@/features/blocks/logic/enviaqueue/components/EnviaQueueNodeBody'
 
 type Props = {
   block: BlockV6
@@ -113,6 +114,9 @@ export const BlockNodeContent = ({
     }
     case LogicBlockType.JUMP: {
       return <JumpNodeBody options={block.options} />
+    }
+    case LogicBlockType.ENVIA_QUEUE: {
+      return <EnviaQueueNodeBody options={block.options} />
     }
     case LogicBlockType.AB_TEST: {
       return <AbTestNodeBody block={block} groupId={groupId} />

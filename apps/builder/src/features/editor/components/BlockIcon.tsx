@@ -94,6 +94,8 @@ export const BlockIcon = ({ type, mt }: BlockIconProps): JSX.Element => {
       return <WaitIcon color={purple} mt={mt} />
     case LogicBlockType.JUMP:
       return <JumpIcon color={purple} mt={mt} />
+    case LogicBlockType.ENVIA_QUEUE:
+      return <JumpIcon color={purple} mt={mt} />
     case LogicBlockType.TYPEBOT_LINK:
       return <TypebotLinkIcon color={purple} mt={mt} />
     case LogicBlockType.AB_TEST:

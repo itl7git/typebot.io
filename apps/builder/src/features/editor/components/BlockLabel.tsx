@@ -69,6 +69,8 @@ export const BlockLabel = ({ type }: Props): JSX.Element => {
       return <Text fontSize="sm">{t('editor.sidebarBlock.wait.label')}</Text>
     case LogicBlockType.JUMP:
       return <Text fontSize="sm">{t('editor.sidebarBlock.jump.label')}</Text>
+    case LogicBlockType.ENVIA_QUEUE:
+      return <Text fontSize="sm">Tranferir Fila</Text>
     case LogicBlockType.AB_TEST:
       return <Text fontSize="sm">{t('editor.sidebarBlock.abTest.label')}</Text>
     case IntegrationBlockType.GOOGLE_SHEETS:

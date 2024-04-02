@@ -7,6 +7,7 @@ import { setVariableBlockSchema } from './setVariable'
 import { typebotLinkBlockSchema } from './typebotLink'
 import { waitBlockSchema } from './wait'
 import { abTestBlockSchemas } from './abTest'
+import { enviaQueueBlockSchema } from './enviaqueue'
 
 export const logicBlockSchemas = {
   v5: [
@@ -17,6 +18,7 @@ export const logicBlockSchemas = {
     typebotLinkBlockSchema,
     waitBlockSchema,
     jumpBlockSchema,
+    enviaQueueBlockSchema,
     abTestBlockSchemas.v5,
   ],
   v6: [
@@ -27,6 +29,7 @@ export const logicBlockSchemas = {
     typebotLinkBlockSchema,
     waitBlockSchema,
     jumpBlockSchema,
+    enviaQueueBlockSchema,
     abTestBlockSchemas.v6,
   ],
 } as const
