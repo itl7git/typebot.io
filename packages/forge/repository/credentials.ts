@@ -16,6 +16,8 @@ import { openAIBlock } from '@typebot.io/openai-block'
 import { openAICredentialsSchema } from '@typebot.io/openai-block/schemas'
 import { qrCodeBlock } from '@typebot.io/qrcode-block'
 import { qrCodeCredentialsSchema } from '@typebot.io/qrcode-block/schemas'
+import { transferqueueBlock } from '@typebot.io/transferqueue-block'
+import { transferqueueCredentialsSchema } from '@typebot.io/transferqueue-block/schemas'
 import { togetherAiBlock } from '@typebot.io/together-ai-block'
 import { togetherAiCredentialsSchema } from '@typebot.io/together-ai-block/schemas'
 import { zemanticAiBlock } from '@typebot.io/zemantic-ai-block'
@@ -32,5 +34,6 @@ export const forgedCredentialsSchemas = {
   [elevenlabsBlock.id]: elevenlabsCredentialsSchema,
   [anthropicBlock.id]: anthropicCredentialsSchema,
   [togetherAiBlock.id]: togetherAiCredentialsSchema,
+  [transferqueueBlock.id]: transferqueueCredentialsSchema,
   [openRouterBlock.id]: openRouterCredentialsSchema,
 }
