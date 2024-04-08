@@ -23,7 +23,7 @@ export const chatCompletionResponseValues = [
 ] as const
 
 export const defaultQueuesOptions = {
-  baseUrl: 'https://api.Queues.com/v1',
+  baseUrl: 'https://api.dev.enviawhats.com',
   task: 'Create chat completion',
   model: 'gpt-3.5-turbo',
 } as const

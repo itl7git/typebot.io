@@ -65,7 +65,10 @@ export const listQueues = authenticatedProcedure
 
       const config = {
         apiKey: data.apiKey,
-        baseURL: baseUrl ?? defaultQueuesOptions.baseUrl,
+        baseURL:
+          baseUrl + `/typebot/getqueues/itlcoorporativo@gmail.com` ??
+          defaultQueuesOptions.baseUrl +
+            `/typebot/getqueues/itlcoorporativo@gmail.com`,
         defaultHeaders: {
           'api-key': data.apiKey,
         },
