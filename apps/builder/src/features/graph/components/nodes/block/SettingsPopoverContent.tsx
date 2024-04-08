@@ -45,6 +45,7 @@ import { IntegrationBlockType } from '@typebot.io/schemas/features/blocks/integr
 import { LogicBlockType } from '@typebot.io/schemas/features/blocks/logic/constants'
 import { ForgedBlockSettings } from '../../../../forge/components/ForgedBlockSettings'
 import { OpenAISettings } from '@/features/blocks/integrations/openai/components/OpenAISettings'
+import { QueuesSettings } from '@/features/blocks/logic/queue/components/QueuesSettings'
 
 type Props = {
   block: BlockWithOptions
@@ -249,6 +250,14 @@ export const BlockSettings = ({
         />
       ) : (
         <></>
+      )
+    }
+    case LogicBlockType.QUEUE: {
+      return (
+        <QueuesSettings
+          options={block.options}
+          onOptionsChange={updateOptions}
+        />
       )
     }
     case LogicBlockType.AB_TEST: {

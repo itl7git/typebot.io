@@ -39,6 +39,8 @@ import { IntegrationBlockType } from '@typebot.io/schemas/features/blocks/integr
 import { LogicBlockType } from '@typebot.io/schemas/features/blocks/logic/constants'
 import { Block } from '@typebot.io/schemas'
 import { OpenAILogo } from '@/features/blocks/integrations/openai/components/OpenAILogo'
+import { QueuesLogo } from '@/features/blocks/logic/queue/components/QueuesLogo'
+
 import { ForgedBlockIcon } from '@/features/forge/ForgedBlockIcon'
 
 type BlockIconProps = { type: Block['type']; mt?: string }
@@ -94,6 +96,8 @@ export const BlockIcon = ({ type, mt }: BlockIconProps): JSX.Element => {
       return <WaitIcon color={purple} mt={mt} />
     case LogicBlockType.JUMP:
       return <JumpIcon color={purple} mt={mt} />
+    case LogicBlockType.QUEUE:
+      return <QueuesLogo mt={mt} fill={openAIColor} />
     case LogicBlockType.TYPEBOT_LINK:
       return <TypebotLinkIcon color={purple} mt={mt} />
     case LogicBlockType.AB_TEST:

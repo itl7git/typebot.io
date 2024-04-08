@@ -1,6 +1,7 @@
 import { z } from '../../../zod'
 import { conditionBlockSchemas } from './condition'
 import { jumpBlockSchema } from './jump'
+import { queuesBlockSchema } from './queue'
 import { redirectBlockSchema } from './redirect'
 import { scriptBlockSchema } from './script'
 import { setVariableBlockSchema } from './setVariable'
@@ -17,6 +18,7 @@ export const logicBlockSchemas = {
     typebotLinkBlockSchema,
     waitBlockSchema,
     jumpBlockSchema,
+    queuesBlockSchema,
     abTestBlockSchemas.v5,
   ],
   v6: [
@@ -27,6 +29,7 @@ export const logicBlockSchemas = {
     typebotLinkBlockSchema,
     waitBlockSchema,
     jumpBlockSchema,
+    queuesBlockSchema,
     abTestBlockSchemas.v6,
   ],
 } as const
