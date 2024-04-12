@@ -9,6 +9,7 @@ import { executeSetVariable } from './blocks/logic/setVariable/executeSetVariabl
 import { executeTypebotLink } from './blocks/logic/typebotLink/executeTypebotLink'
 import { executeAbTest } from './blocks/logic/abTest/executeAbTest'
 import { LogicBlockType } from '@typebot.io/schemas/features/blocks/logic/constants'
+import { executeQueueBlock } from './blocks/logic/queue/executeQueueBlock'
 
 export const executeLogic =
   (state: SessionState) =>
@@ -28,6 +29,11 @@ export const executeLogic =
         return executeWait(state, block)
       case LogicBlockType.JUMP:
         return executeJumpBlock(state, block.options)
+      case LogicBlockType.QUEUE:
+        return {
+          ...(await executeQueueBlock(state, block)),
+          //startTimeShouldBeUpdated: true,
+        }
       case LogicBlockType.AB_TEST:
         return executeAbTest(state, block)
     }

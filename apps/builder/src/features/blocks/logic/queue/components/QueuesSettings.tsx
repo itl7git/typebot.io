@@ -1,33 +1,33 @@
 import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
+  //Accordion,
+  //AccordionButton,
+  //AccordionIcon,
+  //AccordionItem,
+  //AccordionPanel,
   Stack,
-  useDisclosure,
-  Text,
+  // useDisclosure,
+  //Text,
 } from '@chakra-ui/react'
 import React from 'react'
-import { CredentialsDropdown } from '@/features/credentials/components/CredentialsDropdown'
+//import { CredentialsDropdown } from '@/features/credentials/components/CredentialsDropdown'
 import {
-  ChatCompletionOpenAIOptions,
-  CreateImageOpenAIOptions,
-  CreateSpeechOpenAIOptions,
+  // ChatCompletionOpenAIOptions,
+  // CreateImageOpenAIOptions,
+  // CreateSpeechOpenAIOptions,
   QueuesBlock,
 } from '@typebot.io/schemas/features/blocks/logic/queue'
-import { QueuesCredentialsModal } from './QueuesCredentialsModal'
+import { isEmpty } from '@typebot.io/lib'
+// import { QueuesCredentialsModal } from './QueuesCredentialsModal'
 import { useWorkspace } from '@/features/workspace/WorkspaceProvider'
-import { DropdownList } from '@/components/DropdownList'
-import { QueuesCompletionSettings } from './createChatCompletion/QueuesCompletionSettings'
-import { TextInput } from '@/components/inputs'
-import {
-  defaultQueuesOptions,
-  QueuesTasks,
-} from '@typebot.io/schemas/features/blocks/logic/queue/constants'
-import { QueuesCreateSpeechSettings } from './audio/QueuesCreateSpeechSettings'
+import { QueuesDropdown } from './QueuesDropdown'
+//import { QueuesCompletionSettings } from './createChatCompletion/QueuesCompletionSettings'
+//import { TextInput } from '@/components/inputs'
+import //defaultQueuesOptions,
+//QueuesTasks,
+'@typebot.io/schemas/features/blocks/logic/queue/constants'
+//import { QueuesCreateSpeechSettings } from './audio/QueuesCreateSpeechSettings'
 
-type OpenAITask = (typeof QueuesTasks)[number]
+//type OpenAITask = (typeof QueuesTasks)[number]
 
 type Props = {
   block: QueuesBlock
@@ -35,47 +35,52 @@ type Props = {
 }
 
 export const QueuesSettings = ({
-  block: { options },
+  block: { id: blockId, options },
   onOptionsChange,
 }: Props) => {
   const { workspace } = useWorkspace()
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  // const { isOpen, onOpen, onClose } = useDisclosure()
 
-  const updateCredentialsId = (credentialsId: string | undefined) => {
+  // const updateCredentialsId = (credentialsId: string | undefined) => {
+  //   onOptionsChange({
+  //     ...options,
+  //     credentialsId,
+  //   })
+  // }
+
+  const updateQueueId = (queueId: string | undefined) => {
     onOptionsChange({
       ...options,
-      credentialsId,
+      queueId: isEmpty(queueId) ? undefined : queueId,
     })
   }
 
-  const updateTask = (task: OpenAITask) => {
-    onOptionsChange({
-      credentialsId: options?.credentialsId,
-      task,
-    } as QueuesBlock['options'])
-  }
+  // const updateBaseUrl = (baseUrl: string) => {
+  //   onOptionsChange({
+  //     ...options,
+  //     baseUrl,
+  //   })
+  // }
 
-  const updateBaseUrl = (baseUrl: string) => {
-    onOptionsChange({
-      ...options,
-      baseUrl,
-    })
-  }
+  // const updateApiVersion = (apiVersion: string) => {
+  //   onOptionsChange({
+  //     ...options,
+  //     apiVersion,
+  //   })
+  // }
 
-  const updateApiVersion = (apiVersion: string) => {
-    onOptionsChange({
-      ...options,
-      apiVersion,
-    })
-  }
-
-  const baseUrl = options?.baseUrl ?? defaultQueuesOptions.baseUrl
+  // const baseUrl = options?.baseUrl ?? defaultQueuesOptions.baseUrl
 
   return (
     <Stack>
       {workspace && (
         <>
-          <CredentialsDropdown
+          <QueuesDropdown
+            defaultValue={(options?.queueId as string) ?? ''}
+            onChange={updateQueueId}
+            blockId={blockId as string}
+          />
+          {/* <CredentialsDropdown
             type="openai"
             workspaceId={workspace.id}
             currentCredentialsId={options?.credentialsId}
@@ -87,12 +92,13 @@ export const QueuesSettings = ({
             isOpen={isOpen}
             onClose={onClose}
             onNewCredentials={updateCredentialsId}
-          />
+          /> */}
         </>
       )}
+
       {options?.credentialsId && (
         <>
-          <Accordion allowToggle>
+          {/* <Accordion allowToggle>
             <AccordionItem>
               <AccordionButton>
                 <Text w="full" textAlign="left">
@@ -115,55 +121,55 @@ export const QueuesSettings = ({
                 )}
               </AccordionPanel>
             </AccordionItem>
-          </Accordion>
+          </Accordion> */}
 
-          <DropdownList
-            currentItem={options.task}
-            items={QueuesTasks.slice(0, -1)}
-            onItemSelect={updateTask}
-            placeholder="Select task"
-          />
-          {options.task && (
+          {/* {options.task && (
             <OpenAITaskSettings
               options={options}
               onOptionsChange={onOptionsChange}
             />
-          )}
+          )} */}
+          {/* <DropdownList
+            currentItem={options.task}
+            items={QueuesTasks.slice(0, -1)}
+            onItemSelect={updateTask}
+            placeholder="Select task"
+          /> */}
         </>
       )}
     </Stack>
   )
 }
 
-const OpenAITaskSettings = ({
-  options,
-  onOptionsChange,
-}: {
-  options:
-    | ChatCompletionOpenAIOptions
-    | CreateImageOpenAIOptions
-    | CreateSpeechOpenAIOptions
-  onOptionsChange: (options: QueuesBlock['options']) => void
-}): JSX.Element | null => {
-  switch (options.task) {
-    case 'Create chat completion': {
-      return (
-        <QueuesCompletionSettings
-          options={options}
-          onOptionsChange={onOptionsChange}
-        />
-      )
-    }
-    case 'Create speech': {
-      return (
-        <QueuesCreateSpeechSettings
-          options={options}
-          onOptionsChange={onOptionsChange}
-        />
-      )
-    }
-    case 'Create image': {
-      return null
-    }
-  }
-}
+// const OpenAITaskSettings = ({
+//   options,
+//   onOptionsChange,
+// }: {
+//   options:
+//     | ChatCompletionOpenAIOptions
+//     | CreateImageOpenAIOptions
+//     | CreateSpeechOpenAIOptions
+//   onOptionsChange: (options: QueuesBlock['options']) => void
+// }): JSX.Element | null => {
+//   switch (options.task) {
+//     case 'Create chat completion': {
+//       return (
+//         <QueuesCompletionSettings
+//           options={options}
+//           onOptionsChange={onOptionsChange}
+//         />
+//       )
+//     }
+//     case 'Create speech': {
+//       return (
+//         <QueuesCreateSpeechSettings
+//           options={options}
+//           onOptionsChange={onOptionsChange}
+//         />
+//       )
+//     }
+//     case 'Create image': {
+//       return null
+//     }
+//   }
+// }

@@ -253,12 +253,7 @@ export const BlockSettings = ({
       )
     }
     case LogicBlockType.QUEUE: {
-      return (
-        <QueuesSettings
-          options={block.options}
-          onOptionsChange={updateOptions}
-        />
-      )
+      return <QueuesSettings block={block} onOptionsChange={updateOptions} />
     }
     case LogicBlockType.AB_TEST: {
       return (
